@@ -1,12 +1,24 @@
 import './App.css';
 
 function App() {
+  // const title = 'In the shadow of the shield';
+  // const likes = 5000;
+  // const link = "http://www.google.com";
+  /*objects and booleans are not allowed*/
+
+
   return (
     <div className="App">
       <div className="content">
-        <h1>
-          App Component
-        </h1>
+        {/* <h1>{title}</h1>
+        <p>Liked {likes} times</p>
+        <p>{10}</p>
+        <p>{'Hello, Paladins'}</p>
+        <p>{[1, 2, 3, 4, 5]}</p>
+        <p>{Math.ceil(Math.random() * 10)}</p>
+
+        <a href={link} target='blank'>Google site</a> */}
+        <h1>App Component</h1>
       </div>
     </div>
   );
