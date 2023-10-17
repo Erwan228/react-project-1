@@ -19,11 +19,7 @@ const Home = () => {
     // const handleClickAgain = (name, e) => {
     //     console.log('hello ' + name, e.target)
     // }
-    const [blogs, setBlogs] = useState([
-        { title: 'My new website', body: 'lorem ipsum...', author: 'Music', id: 1 },
-        { title: 'Welcome pary!', body: 'lorem ipsum...', author: 'Keith', id: 2 },
-        { title: 'Web dev top tips', body: 'lorem ipsum...', author: 'Melinda', id: 3 },
-    ])
+    const [blogs, setBlogs] = useState(null)
 
     const [name, setName] = useState('Music')
 
