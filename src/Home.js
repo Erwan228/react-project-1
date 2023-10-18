@@ -23,15 +23,20 @@ const Home = () => {
 
     const [name, setName] = useState('Music')
 
-    const handleDelete = (id) => {
-        const newBlogs = blogs.filter(blog => blog.id !== id);
-        setBlogs(newBlogs);
-    }
+    const [isPending, setIsPending] = useState(true);
+
 
     useEffect(() => {
-        console.log('use effect ran');
-        console.log(name)
-    }, [name]);
+        fetch('http://localhost:8000/blogs')
+            .then(res => {
+                return res.json()
+            })
+            .then((data => {
+                console.log(data);
+                setBlogs(data);
+                setIsPending(false)
+            }))
+    }, []);
 
 
     return (
@@ -42,8 +47,9 @@ const Home = () => {
             {/* <button onClick={(e) => {
                 handleClickAgain('Music', e)
             }}>Click me again</button> */}
-            <BlogList blogs={blogs} title='All blogs!' handleDelete={handleDelete} />
-            <BlogList blogs={blogs.filter((blog) => blog.author === 'Music')} title="Music's blogs!" />
+            {isPending && <div>Loading...</div>}
+            {blogs && <BlogList blogs={blogs} title='All blogs!' />}
+            {blogs && <BlogList blogs={blogs.filter((blog) => blog.author === 'Music')} title="Music's blogs!" />}
             <button onClick={() => setName('Keith')}>Change name</button>
             <p>{name}</p>
         </div>
