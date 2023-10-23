@@ -41,9 +41,11 @@ const Home = () => {
                     console.log(data);
                     setBlogs(data);
                     setIsPending(false)
+                    setError(null);
                 })
                 .catch(err => {
-                    setError(err.message)
+                    setIsPending(false);
+                    setError(err.message);
                 })
         }, 1000);
     }, []);
