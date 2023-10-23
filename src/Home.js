@@ -25,18 +25,26 @@ const Home = () => {
 
     const [isPending, setIsPending] = useState(true);
 
+    const [error, setError] = useState(null);
+
 
     useEffect(() => {
         setTimeout(() => {
             fetch('http://localhost:8000/blogs')
                 .then(res => {
+                    if (!res.ok) {
+                        throw Error('could not fetch the data for that resource, pls fix')
+                    }
                     return res.json()
                 })
-                .then((data => {
+                .then(data => {
                     console.log(data);
                     setBlogs(data);
                     setIsPending(false)
-                }))
+                })
+                .catch(err => {
+                    setError(err.message)
+                })
         }, 1000);
     }, []);
 
@@ -49,6 +57,7 @@ const Home = () => {
             {/* <button onClick={(e) => {
                 handleClickAgain('Music', e)
             }}>Click me again</button> */}
+            {error && <div>{error}</div>}
             {isPending && <div>Loading...</div>}
             {blogs && <BlogList blogs={blogs} title='All blogs!' />}
             {blogs && <BlogList blogs={blogs.filter((blog) => blog.author === 'Music')} title="Music's blogs!" />}
