@@ -5,8 +5,8 @@ const Navbar = () => {
         <nav className="navbar">
             <h1>The Paladins Journal</h1>
             <div className="links">
-                <Link href="/">Home</Link>
-                <Link href="/create"
+                <Link to="/">Home</Link>
+                <Link to="/create"
                 // style={{
                 //     color: "white",
                 //     backgroundColor: '#f1356d',
