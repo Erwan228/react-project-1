@@ -1,16 +1,22 @@
 {
-    "blogs": [
-        {
-            "title": "My first blog",
-            "body": "Why do we use it?\nIt is a long established fact that a reader",
-            "author": "Music",
-            "id": 1
-        },
-        {
-            "title": "Opening party!",
-            "body": "Why do we use it?\nIt is a long established fact that a reader",
-            "author": "Melinda",
-            "id": 2
-        }
-    ]
+  "blogs": [
+    {
+      "title": "My first blog",
+      "body": "Why do we use it?\nIt is a long established fact that a reader",
+      "author": "Music",
+      "id": 1
+    },
+    {
+      "title": "Opening party!",
+      "body": "Why do we use it?\nIt is a long established fact that a reader",
+      "author": "Melinda",
+      "id": 2
+    },
+    {
+      "title": "New function",
+      "body": "I am so excited that i can get my web page to add onto my server. reeeeeee",
+      "author": "Music",
+      "id": 3
+    }
+  ]
 }
